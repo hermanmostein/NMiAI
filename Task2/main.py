@@ -18,13 +18,21 @@ from core.task_executor import TaskExecutor
 from tripletex.client import TripletexClient
 
 # Configure logging
+import os
+
+# Only use file logging in local development
+handlers = [logging.StreamHandler(sys.stdout)]
+if os.getenv('RAILWAY_ENVIRONMENT') is None:
+    # Local development - add file logging
+    try:
+        handlers.append(logging.FileHandler('tripletex_agent.log'))
+    except Exception:
+        pass  # Ignore if file logging fails
+
 logging.basicConfig(
     level=getattr(logging, settings.LOG_LEVEL),
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('tripletex_agent.log')
-    ]
+    handlers=handlers
 )
 logger = logging.getLogger(__name__)
 
