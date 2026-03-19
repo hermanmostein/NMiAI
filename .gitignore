@@ -1,3 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environments
+venv/
+env/
+ENV/
+Task1/venv/
+Task2/venv/
+
+# Environment Variables
+.env
+.env.local
+Task1/.env
+Task2/.env
+
 # Exclude image files in Task1/data folder
 Task1/data/**/*.jpg
 Task1/data/**/*.jpeg
@@ -7,5 +30,34 @@ Task1/data/**/*.bmp
 Task1/data/**/*.webp
 Task1/data/**/*.svg
 
+# Task1 large directories
+Task1/runs/
+Task1/data/train/
+Task1/data/train_split/
+Task1/data/product_images_organized/
+Task1/test_input/
+Task1/submission/best.pt
+Task1/*.pt
+
+# Logs
+*.log
+logs/
+tripletex_agent.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # macOS system files
 .DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary
+/tmp/
+*.tmp
