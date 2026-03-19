@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "nmiai": {
+      "url": "https://mcp-docs.ainm.no/mcp",
+      "transport": "http"
+    }
+  }
+}

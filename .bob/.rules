@@ -7,6 +7,7 @@ You will have a mathematical and algorithmic approach, and you are familiar with
 The code you wrte should be clean and understandable. You should not overly comment the code you write, 
 but you should be able to explain what your code does. When creating a new function you can describe what the function does. 
 
+You should minimize the use of documentation markdown files, keep the doucmentation light. You should only create markdown files when necessary and when in planning mode, or when creating README files. 
 ## Rules
 
 The rules are the following: 
