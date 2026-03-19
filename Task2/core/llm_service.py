@@ -16,10 +16,14 @@ class LLMService:
     
     def __init__(self):
         """Initialize OpenAI client"""
-        self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+        if not settings.OPENAI_API_KEY:
+            logger.warning("OPENAI_API_KEY not set - LLM service will not work")
+            self.client = None
+        else:
+            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
         self.model = settings.OPENAI_MODEL
     
-    def analyze_prompt(self, prompt: str, files: List[Dict] = None) -> Dict[str, Any]:
+    def analyze_prompt(self, prompt: str, files: Optional[List[Dict]] = None) -> Dict[str, Any]:
         """
         Analyze a task prompt and generate structured API call plan
         
@@ -30,6 +34,9 @@ class LLMService:
         Returns:
             Structured task analysis with API calls to execute
         """
+        if not self.client:
+            raise ValueError("OPENAI_API_KEY not configured. Set it in environment variables.")
+        
         system_prompt = self._get_system_prompt()
         user_message = self._build_user_message(prompt, files)
         

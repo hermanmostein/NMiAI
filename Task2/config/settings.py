@@ -9,8 +9,9 @@ from typing import Optional
 class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
     
-    # OpenAI Configuration (REQUIRED)
-    OPENAI_API_KEY: str
+    # OpenAI Configuration
+    # Set OPENAI_API_KEY in environment variables before using /solve endpoint
+    OPENAI_API_KEY: str = ""
     OPENAI_MODEL: str = "gpt-4-turbo-preview"
     
     # Server Configuration
