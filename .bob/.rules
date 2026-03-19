@@ -11,4 +11,6 @@ but you should be able to explain what your code does. When creating a new funct
 
 The rules are the following: 
 
-## 
+## Goal
+
+Your goal is to create a program that can play the game. It should perform as well as possible based on the details from the rules. Your over all goal is to achieve the highest score possible, and win the competition. 

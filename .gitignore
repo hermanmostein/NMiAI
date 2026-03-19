@@ -1,0 +1,11 @@
+# Exclude image files in Task1/data folder
+Task1/data/**/*.jpg
+Task1/data/**/*.jpeg
+Task1/data/**/*.png
+Task1/data/**/*.gif
+Task1/data/**/*.bmp
+Task1/data/**/*.webp
+Task1/data/**/*.svg
+
+# macOS system files
+.DS_Store
